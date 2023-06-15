@@ -1,0 +1,231 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 15.06.2023</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="create-product-tab" data-bs-toggle="tab" data-bs-target="#create-product-tab-pane" type="button" role="tab" aria-controls="create-product-tab-pane" aria-selected="true">Create product</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="create-category-tab" data-bs-toggle="tab" data-bs-target="#create-category-tab-pane" type="button" role="tab" aria-controls="create-category-tab-pane" aria-selected="false">Create category</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="order-creation-tab" data-bs-toggle="tab" data-bs-target="#order-creation-tab-pane" type="button" role="tab" aria-controls="order-creation-tab-pane" aria-selected="false">Order creation</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="send-mail-tab" data-bs-toggle="tab" data-bs-target="#send-mail-tab-pane" type="button" role="tab" aria-controls="send-mail-tab-pane" aria-selected="false">Send mail</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="send-sms-tab" data-bs-toggle="tab" data-bs-target="#send-sms-tab-pane" type="button" role="tab" aria-controls="send-sms-tab-pane" aria-selected="false">Send sms</button>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent" style="padding: 10%;">
+         
+        <div class="tab-pane fade" id="create-product-tab-pane" role="tabpanel" aria-labelledby="create-product-tab" tabindex="0">
+            <form class="needs-validation" novalidate>
+                <div class="col-auto">
+                    <label for="inputName" class="form-label">Product name</label>
+                    <input type="text" class="form-control" id="inputName" required>
+                    <div class="valid-feedback">
+                        Все добре!
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <label for="inputPrice" class="form-label">Price</label>
+                    <input type="number" min="1" class="form-control" id="inputPrice" required>
+                    <div class="valid-feedback">
+                        Все добре!
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <label for="inputDescription" class="form-label">Description</label>
+                    <textarea minlength="20" class="form-control" id="inputDescription" rows="3" required></textarea>
+                    <div class="valid-feedback">
+                        Все добре!
+                    </div>
+                    <div class="invalid-feedback">
+                        Длина описания должна быть не менее <strong>20</strong> символов
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <label for="inputCategory" class="form-label">Category</label>
+                    <input list= "categoryDatalist" type="text" class="form-control" id="inputCategory" required>
+                    <datalist id="categoryDatalist">
+                        <option> Category1 </option>
+                        <option> Category2 </option>
+                        <option> Category3 </option>
+                        <option> Category4 </option>
+                        <option> Category5 </option>
+                    </datalist>
+                    <div class="valid-feedback">
+                        Все добре!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Image</label>
+                    <input class="form-control" type="file" id="formFile" required>
+                    <div class="valid-feedback">
+                        Все добре!
+                    </div>
+                </div>
+                <button class="btn btn-outline-success">Submit</button>
+                <button type="reset" class="btn btn-outline-warning">Reset</button>
+            </form>
+        </div>
+
+        <div class="tab-pane fade" id="create-category-tab-pane" role="tabpanel" aria-labelledby="create-category-tab" tabindex="0">
+            <form class="needs-validation" novalidate>
+                <div class="col-auto">
+                    <label for="inputCategory" class="form-label">Category name</label>
+                    <input type="text" class="form-control" id="inputCategory" required>
+                    <div class="valid-feedback">
+                        Все добре!
+                    </div>
+                </div>
+                <button class="btn btn-outline-success">Submit</button>
+                <button type="reset" class="btn btn-outline-warning">Reset</button>
+            </form>
+        </div>
+
+        <div class="tab-pane fade" id="order-creation-tab-pane" role="tabpanel" aria-labelledby="order-creation-tab" tabindex="0">
+            <form class="needs-validation" novalidate>
+                <div class="col-auto">
+                    <label for="inputPhone" class="form-label">Phone number</label>
+                    <input type="text" class="form-control inputPhone" id="inputPhone" required>
+                    <div class="valid-feedback">
+                        Все добре!
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <label for="inputName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="inputName" required>
+                    <div class="valid-feedback">
+                        Все добре!
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <label for="inputSurname" class="form-label">Surname</label>
+                    <input type="text" class="form-control" id="inputSurname" required>
+                    <div class="valid-feedback">
+                        Все добре!
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <label for="inputCity" class="form-label">City</label>
+                    <input type="text" class="form-control" id="inputCity" required>
+                    <div class="valid-feedback">
+                        Все добре!
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <label for="inputMailNumber" class="form-label">Mail number</label>
+                    <input list= "mailNumberDatalist" type="text" class="form-control" id="inputMailNumber" required>
+                    <datalist id="mailNumberDatalist">
+                        <option> Вiддiлення №1 </option>
+                        <option> Вiддiлення №2 </option>
+                        <option> Вiддiлення №3 </option>
+                        <option> Вiддiлення №4 </option>
+                        <option> Вiддiлення №5 </option>
+                    </datalist>
+                    <div class="valid-feedback">
+                        Все добре!
+                    </div>
+                </div>
+                <button class="btn btn-outline-success">Submit</button>
+                <button type="reset" class="btn btn-outline-warning">Reset</button>
+            </form>
+        </div>
+
+        <div class="tab-pane fade" id="send-mail-tab-pane" role="tabpanel" aria-labelledby="send-mail-tab" tabindex="0">
+            <form class="needs-validation" novalidate>
+                <div class="col-auto">
+                    <label for="inputEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" required>
+                    <div class="valid-feedback">
+                        Все добре!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">message</label>
+                    <textarea minlength="20" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                    <div class="valid-feedback">
+                        Все добре!
+                    </div>
+                    <div class="invalid-feedback">
+                        Длина сообщения должна быть не менее <strong>20</strong> символов
+                    </div>
+                </div>
+                <button class="btn btn-outline-success">Submit</button>
+                <button type="reset" class="btn btn-outline-warning">Reset</button>
+            </form>
+        </div>
+
+        <div class="tab-pane fade" id="send-sms-tab-pane" role="tabpanel" aria-labelledby="send-sms-tab" tabindex="0">
+            <form class="needs-validation" novalidate>
+                <div class="col-auto">
+                    <label for="inputPhone" class="form-label">Phone</label>
+                    <input maxlength="16" minlength="16" type="text" class="form-control inputPhone" id="inputPhone" required>
+                    <div class="valid-feedback">
+                        Все добре!
+                    </div>
+                </div>  
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">message</label>
+                    <textarea minlength="20" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                    <div class="valid-feedback">
+                        Все добре!
+                    </div>
+                    <div class="invalid-feedback">
+                        Длина сообщения должна быть не менее <strong>20</strong> символов
+                    </div>
+                </div>
+                <button class="btn btn-outline-success">Submit</button>
+                <button type="reset" class="btn btn-outline-warning">Reset</button>
+            </form>
+        </div>
+
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+
+    <script>
+
+        $('.inputPhone').inputmask("+380 99 999 9999");
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+          "use strict";
+  
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          const forms = document.querySelectorAll(".needs-validation");
+  
+          // Loop over them and prevent submission
+          Array.from(forms).forEach((form) => {
+            form.addEventListener(
+              "submit",
+              (event) => {
+                if (!form.checkValidity()) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+  
+                form.classList.add("was-validated");
+              },
+              false
+            );
+          });
+        })();
+      </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous" defer></script>
+</body>
+</html>
+
+
